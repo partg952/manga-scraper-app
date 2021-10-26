@@ -1,0 +1,36 @@
+nav{
+    padding: 10px;
+  
+    input{
+        background-color:rgb(6,18,30) ;
+        border: 1px solid rgb(24, 64, 107);
+        border-radius: 4px;
+        text-align: left;
+        padding: 10px;
+        color: white;
+        outline: none;
+        font-family: 'Zen Kaku Gothic Antique', sans-serif;
+        &::placeholder{
+            color: rgb(24, 64, 107);
+        }
+    }
+    
+}
+
+#navbar{
+    z-index: 9999999;
+    display:flex;
+    position: fixed; 
+    top: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    background-color: rgb(15, 42, 70);
+    img{
+        margin: 10px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+}
