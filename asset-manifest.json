@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/manga-scraper-app/static/css/main.7f84bbae.chunk.css",
+    "main.js": "/manga-scraper-app/static/js/main.1b7d026a.chunk.js",
+    "main.js.map": "/manga-scraper-app/static/js/main.1b7d026a.chunk.js.map",
+    "runtime-main.js": "/manga-scraper-app/static/js/runtime-main.5a343196.js",
+    "runtime-main.js.map": "/manga-scraper-app/static/js/runtime-main.5a343196.js.map",
+    "static/js/2.090289ae.chunk.js": "/manga-scraper-app/static/js/2.090289ae.chunk.js",
+    "static/js/2.090289ae.chunk.js.map": "/manga-scraper-app/static/js/2.090289ae.chunk.js.map",
+    "static/js/3.16318bef.chunk.js": "/manga-scraper-app/static/js/3.16318bef.chunk.js",
+    "static/js/3.16318bef.chunk.js.map": "/manga-scraper-app/static/js/3.16318bef.chunk.js.map",
+    "index.html": "/manga-scraper-app/index.html",
+    "static/css/main.7f84bbae.chunk.css.map": "/manga-scraper-app/static/css/main.7f84bbae.chunk.css.map",
+    "static/js/2.090289ae.chunk.js.LICENSE.txt": "/manga-scraper-app/static/js/2.090289ae.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a343196.js",
+    "static/js/2.090289ae.chunk.js",
+    "static/css/main.7f84bbae.chunk.css",
+    "static/js/main.1b7d026a.chunk.js"
+  ]
+}
