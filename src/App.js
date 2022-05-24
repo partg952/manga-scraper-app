@@ -10,13 +10,11 @@ const [data,setData] = useState([]);
 console.log(data.length)
 useEffect(()=>{
   setData([]);
-  for(let i=1;i<=5;i++){
-    axios("https://webtoon-scraper.herokuapp.com/"+i).then(res=>{
-    res.data.forEach((items)=>{
-      setData(prev=>[...prev,items])
-    })
+
+    axios("https://single-api23.herokuapp.com/manga/home").then(res=>{
+    setData(res.data)
   })
-}
+
 },[])
   return (
     <div className="App">
@@ -25,7 +23,7 @@ useEffect(()=>{
       <Route path='/' exact>
         <Main data={data} setData={setData} />
       </Route>
-      <Route path='/info/:id'>
+      <Route path='/info'>
         <Info/>
       </Route>
      </Router>

@@ -5,11 +5,11 @@ function Main({data,setData}) {
     return (
         <div id='main'>
         {
-            data.length!=0 ? 
+            data.length!=0 ?
             <div id="grid">
             {
                 data.map(items=>(
-                    <Card title={items.title} poster={items.poster} url={items.url} />
+                    <Card title={items.title} poster={items.image} url={items.url} />
                     ))
                 }
                 </div>

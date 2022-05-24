@@ -13,7 +13,8 @@ function Card({title,poster,url,summary}) {
     }
     return (
         <div id="card" onClick={()=>{
-            history.push("/info/"+url.substr(1,url.length))
+            history.push("/info");
+            sessionStorage.setItem('url',url);
         }}>
             <img src={poster} alt="" />
             <h4> {checkLength(title,30)} </h4>

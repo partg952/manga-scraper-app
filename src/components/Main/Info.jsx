@@ -5,7 +5,7 @@ import axios from 'axios';
 import Images from './Images';
 import './Info.scss';
 function Info() {
-    const {id} = useParams();
+    const url = sessionStorage.getItem("url");
     const [info,setInfo] = useState();
     const [chapter,setChapter] = useState();
     const [images,setImages] = useState([]);
@@ -13,11 +13,11 @@ function Info() {
 
     useEffect(()=>{
         function getInfo(){
-            axios.post("https://webtoon-scraper.herokuapp.com/info",{"url":"https://mangabuddy.com/"+id})
+            axios("https://single-api23.herokuapp.com/manga/info?url="+url)
             .then(res=>{
                 setInfo({})
                 console.log(res.data);
-                setInfo(res.data[0])
+                setInfo(res.data)
             })
         }
         getInfo();
@@ -29,27 +29,22 @@ function Info() {
         {
         info!=undefined ?
         <div id='info'>
-            <img id='poster' src={info.poster} alt="" />
+            <img id='poster' src={info.image} alt="" />
             <h1> {info.title} </h1>
-            <h2> Authors : {info.authors} </h2>
-            <h2> Status : {info.status} </h2>
-        <h2> {info.chapters} </h2>
             <h4 id='summary'> {info.summary} </h4>
             <div id="episode-div">
                 {
-                    info.episodes!=undefined &&
-                    info.episodes.map(episodes=>{
+                    info.chapters!=undefined &&
+                    info.chapters.map(episodes=>{
                         return(
                             <button onClick={()=>{
-                                const url = "https://mangabuddy.com"+episodes.ep_url
-                                axios.post("https://webtoon-scraper.herokuapp.com/read",{
-                                    "url":url
-                                }).then(res=>{
+
+                                axios("https://single-api23.herokuapp.com/manga/read?url="+episodes.url).then(res=>{
                                     console.log(url)
                                     console.log(res.data);
                                     setImages(res.data)
                                 })
-                            }}> {episodes.ep_title} </button>
+                            }}> {episodes.title} </button>
                         )
                     })
                 }
@@ -58,7 +53,7 @@ function Info() {
              :
              <p>Loading...</p>}
     </div>
-        
+
     )
 }
 

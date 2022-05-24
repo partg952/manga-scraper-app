@@ -3,12 +3,11 @@
     width: 200px;
     border-radius: 6px;
     overflow: hidden;
-    transition: all 200ms ease;
+    transition: all 200ms ease-in-out;
     cursor: pointer;
     &:hover{
-        transform: scale(1.08);
+        transform: scale(1.08)rotate(2deg);
         text-decoration: underline;
-        
     }
     img{
         width: 100%;
