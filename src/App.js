@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     setData([]);
 
-    axios("https://manga-cufbsiub9-partg952.vercel.app/home").then((res) => {
+    axios("https://manga-api-partg952.vercel.app/home").then((res) => {
       setData(res.data);
     });
   }, []);

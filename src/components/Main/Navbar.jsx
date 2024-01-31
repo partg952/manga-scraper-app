@@ -13,7 +13,7 @@ function Navbar({ data, setData }) {
         onClick={() => {
           setData([]);
 
-          axios("https://manga-cufbsiub9-partg952.vercel.app/home").then(
+          axios("https://manga-api-partg952.vercel.app/home").then(
             (res, err) => {
               setData(res.data);
               console.log(err);
@@ -31,8 +31,7 @@ function Navbar({ data, setData }) {
             if (e.key === "Enter") {
               setData([]);
               axios(
-                "https://manga-cufbsiub9-partg952.vercel.app?q=" +
-                  e.target.value
+                "https://manga-api-partg952.vercel.app?q=" + e.target.value
               ).then((res) => {
                 setData(res.data);
                 history.push("/");
