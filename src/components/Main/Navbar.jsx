@@ -31,7 +31,7 @@ function Navbar({ data, setData }) {
             if (e.key === "Enter") {
               setData([]);
               axios(
-                "https://manga-api-partg952.vercel.app?q=" + e.target.value
+                "https://manga-api-partg952.vercel.app/search?q=" + e.target.value
               ).then((res) => {
                 setData(res.data);
                 history.push("/");
