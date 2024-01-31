@@ -1,32 +1,31 @@
-import './App.css';
-import {useEffect,useState} from 'react';
-import axios from 'axios';
-import {BrowserRouter as Router,Route} from 'react-router-dom';
-import Main from './components/Main/Main'
-import Navbar from './components/Main/Navbar';
-import Info from './components/Main/Info';
+import "./App.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Main from "./components/Main/Main";
+import Navbar from "./components/Main/Navbar";
+import Info from "./components/Main/Info";
 function App() {
-const [data,setData] = useState([]);
-console.log(data.length)
-useEffect(()=>{
-  setData([]);
+  const [data, setData] = useState([]);
+  console.log(data.length);
+  useEffect(() => {
+    setData([]);
 
-    axios("https://single-api23.herokuapp.com/manga/home").then(res=>{
-    setData(res.data)
-  })
-
-},[])
+    axios("https://manga-cufbsiub9-partg952.vercel.app/home").then((res) => {
+      setData(res.data);
+    });
+  }, []);
   return (
     <div className="App">
-     <Router>
-     <Navbar data={data} setData={setData} />
-      <Route path='/' exact>
-        <Main data={data} setData={setData} />
-      </Route>
-      <Route path='/info'>
-        <Info/>
-      </Route>
-     </Router>
+      <Router>
+        <Navbar data={data} setData={setData} />
+        <Route path="/" exact>
+          <Main data={data} setData={setData} />
+        </Route>
+        <Route path="/info">
+          <Info />
+        </Route>
+      </Router>
     </div>
   );
 }
