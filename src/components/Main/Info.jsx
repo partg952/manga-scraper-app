@@ -39,7 +39,7 @@ function Info() {
                   <button
                     onClick={() => {
                       axios(
-                        "http://manga-https://manga-9ypc0m1w8-partg952.vercel.app-partg952.vercel.app?url=" +
+                        "https://manga-api-partg952.vercel.app?url=" +
                           episodes.url
                       ).then((res) => {
                         console.log(url);
