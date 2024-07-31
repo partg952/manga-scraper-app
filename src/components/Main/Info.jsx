@@ -13,13 +13,11 @@ function Info() {
 
   useEffect(() => {
     function getInfo() {
-      axios("https://manga-api-partg952.vercel.app/info?url=" + url).then(
-        (res) => {
-          setInfo({});
-          console.log(res.data);
-          setInfo(res.data);
-        }
-      );
+      axios("https://manga-api-beta.vercel.app/info?url=" + url).then((res) => {
+        setInfo({});
+        console.log(res.data);
+        setInfo(res.data);
+      });
     }
     getInfo();
   }, []);
@@ -29,9 +27,13 @@ function Info() {
       <Images images={images} />
       {info != undefined ? (
         <div id="info">
-          <img id="poster" src={info.image} alt="" />
-          <h1> {info.title} </h1>
-          <h4 id="summary"> {info.summary} </h4>
+          <div id="anime-info">
+            <img id="poster" src={info.image} alt="" />
+            <div id="text">
+              <h1> {info.title} </h1>
+              <h4 id="summary"> {info.summary} </h4>
+            </div>
+          </div>
           <div id="episode-div">
             {info.chapters != undefined &&
               info.chapters.map((episodes) => {
@@ -39,7 +41,7 @@ function Info() {
                   <button
                     onClick={() => {
                       axios(
-                        "https://manga-api-partg952.vercel.app/read?url=" +
+                        "https://manga-api-beta.vercel.app/read?url=" +
                           episodes.url
                       ).then((res) => {
                         console.log(url);

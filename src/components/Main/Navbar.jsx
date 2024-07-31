@@ -13,12 +13,10 @@ function Navbar({ data, setData }) {
         onClick={() => {
           setData([]);
 
-          axios("https://manga-api-partg952.vercel.app/home").then(
-            (res, err) => {
-              setData(res.data);
-              console.log(err);
-            }
-          );
+          axios("https://manga-api-beta.vercel.app/").then((res, err) => {
+            setData(res.data);
+            console.log(err);
+          });
 
           history.push("/");
         }}
@@ -31,7 +29,7 @@ function Navbar({ data, setData }) {
             if (e.key === "Enter") {
               setData([]);
               axios(
-                "https://manga-api-partg952.vercel.app/search?q=" + e.target.value
+                "https://manga-api-beta.vercel.app/search?q=" + e.target.value
               ).then((res) => {
                 setData(res.data);
                 history.push("/");
